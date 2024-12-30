@@ -27,3 +27,10 @@ $("script[type='math/tex; mode=display']").replaceWith(
            katex.renderToString("\\displaystyle "+tex, options) +
            "</div>";
 });
+
+$("d-math").replaceWith(function() {
+    var tex = $(this).text(); // Get the LaTeX code inside the <d-math> tag
+    return "<span class=\"inline-equation\">" +
+           katex.renderToString(tex, options) +
+           "</span>";
+});
